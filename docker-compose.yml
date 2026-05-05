@@ -25,4 +25,5 @@ services:
       - ./frontend:/app
       - /app/node_modules #Protege tus librerías de conflictos con Windows
     environment:
-      - NODE_ENV=development
+      - PUBLIC_SUPABASE_URL=${PUBLIC_SUPABASE_URL}
+      - PUBLIC_SUPABASE_ANON_KEY=${PUBLIC_SUPABASE_ANON_KEY}
