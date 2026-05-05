@@ -1,0 +1,21 @@
+#Especificamos que imagen queremos usar, en este caso la imagen oficial de Node.js basada en Alpine Linux para una imagen ligera
+FROM node:20-alpine
+
+#Creamos la carpeta de trbajo dentro del contenedor
+WORKDIR /app
+
+# Copiamos los archivos de instrucciones (package.json) primero
+# Esto ayuda a que Docker lea las librerías y sea más rápido
+COPY package*.json ./
+
+#Instalamos las dependencias
+RUN npm install
+
+#Copiamos el resto de tu código
+COPY . .
+
+#Exponemos el puerto de Svelte
+EXPOSE 5173
+
+#Comando para arrancar en modo desarrollo
+CMD ["npm", "run", "dev", "--", "--host"]

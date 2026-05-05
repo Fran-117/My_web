@@ -1,0 +1,28 @@
+services:
+  frontend:
+    #image: node:20-alpine
+    #container_name: frontend
+
+    #Establecemos el directorio de trabajo dentro del contenedor
+    #working_dir: /app
+
+    #Mapeamos el puerto 5173 del contenedor al puerto 5173 de la máquina host para acceder a la aplicación desde el navegador
+    #ports:
+      #- "5173:5173"
+    
+    #Montamos el directorio del proyecto en el contenedor para que los cambios se reflejen en tiempo real
+    #volumes:
+      #- ./frontend:/app
+
+    #Mantiene abierto el contenedor para desarrollo y ejecuta los comandos necesarios para iniciar la aplicación
+    #command: sh -c "npm install && npm run dev -- --host"
+
+    build: ./frontend #Ahora docker leerá el Dockerfile que creamos en la carpeta frontend para construir la imagen
+    container_name: frontend_dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules #Protege tus librerías de conflictos con Windows
+    environment:
+      - NODE_ENV=development
