@@ -17,7 +17,9 @@ services:
     #Mantiene abierto el contenedor para desarrollo y ejecuta los comandos necesarios para iniciar la aplicación
     #command: sh -c "npm install && npm run dev -- --host"
 
-    build: ./frontend #Ahora docker leerá el Dockerfile que creamos en la carpeta frontend para construir la imagen
+    build:
+      context: ./frontend #Ahora docker leerá el Dockerfile que creamos en la carpeta frontend para construir la imagen
+      dockerfile: Dockerfile
     container_name: frontend_dev
     ports:
       - "5173:5173"
