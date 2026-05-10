@@ -24,12 +24,12 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {#each projects as project}
             <ProjectCard {project} onSelect={(p) => selectedProject = p} />
-        {each}
+        {/each}
     </div>
 </main>
 
 <BaseModal isOpen={isModalOpen} onClose={close} title="Project Details">
     {#if selectedProject}
         <ProjectContent project={selectedProject} />
-    {if}
+    {/if}
 </BaseModal>

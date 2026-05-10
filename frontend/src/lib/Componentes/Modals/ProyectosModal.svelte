@@ -5,7 +5,7 @@
 
 <div class="relative h-64 sm:h-80">
     <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+    <div class="absolute inset-0 bg-linear-to-t from-slate-900 to-transparent"></div>
 </div>
 
 <div class="p-8">
@@ -14,7 +14,7 @@
             <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-mono rounded-full uppercase">
                 {tag}
             </span>
-        {each}
+        {/each}
     </div>
 
     <h2 class="text-3xl font-bold text-white mb-4">{project.name}</h2>

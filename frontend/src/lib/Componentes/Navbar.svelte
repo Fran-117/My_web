@@ -15,7 +15,7 @@
 
     <div class="hidden md:flex gap-8 text-xs font-semibold uppercase tracking-widest">
         <a href="/" class="text-slate-400 hover:text-blue-400 transition-all duration-300">Inicio</a>
-        <a href="/projects" class="text-slate-400 hover:text-blue-400 transition-all duration-300">Proyectos</a>
+        <a href="/Proyectos" class="text-slate-400 hover:text-blue-400 transition-all duration-300">Proyectos</a>
         <a href="/contact" class="text-slate-400 hover:text-blue-400 transition-all duration-300">Contactar</a>
         <a href="/estudios" class="text-slate-400 hover:text-blue-400 transition-all duration-300">Estudios</a>
     </div>
