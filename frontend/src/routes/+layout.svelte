@@ -1,9 +1,15 @@
 <script lang="ts">
 	import "../routes/layout.css";
-	import Navbar from './Navbar.svelte';
+	import Navbar from '../lib/Componentes/Navbar.svelte';
+	import LOGO from '../lib/assets/Mi_Logo_Sin_Fondo.png';
 
 	let { children } = $props();
 </script>
+
+<!-- Para que se vizualice mi logo en la ventana -->
+<svelte:head>
+	<link rel="icon" href={LOGO} />
+</svelte:head>
 
 <div class="min-h-screen bg-slate-950 text-slate-200 selection:bg-blue-500/30">
 	<Navbar />
