@@ -4,7 +4,7 @@
     import ProjectCard from '$lib/Componentes/Modals/TarjetasModal.svelte';
     import type { Project } from '$lib/types';
 
-    // Mock Data for testing
+    // Datos de ejemplo para los proyectos
     const projects: Project[] = [
         { id: 1, name: "Project One", description: "Long description here...", image: "https://picsum.photos/seed/1/800/600", github: "#", tags: ["Svelte", "Tailwind"] },
         { id: 2, name: "Project Two", description: "Another description...", image: "https://picsum.photos/seed/2/800/600", github: "#", tags: ["Docker", "Go"] },

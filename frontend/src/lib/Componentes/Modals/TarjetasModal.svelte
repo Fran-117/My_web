@@ -4,6 +4,7 @@
 </script>
 
 <button 
+
     onclick={() => onSelect(project)}
     class="group relative aspect-4/3 bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all duration-500"
 >
