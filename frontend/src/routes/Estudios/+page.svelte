@@ -6,41 +6,13 @@
 	import ProjectContent from '$lib/Componentes/Modals/ProjectModal.svelte';
 	import type { Project } from '$lib/types';
 
-	// Estado para el Modal (El "cerebro" que abre la ventana)
+	// Recibimos los datos procesados del servidor
+	let { data } = $props();
+    
+	// Lógica para los modales de los certificados
 	let selectedProject = $state<Project | null>(null);
 	let isModalOpen = $derived(selectedProject !== null);
 	const close = () => (selectedProject = null);
-
-	const educationData = [
-		{
-			category: "Ingeniería Mecatrónica",
-			institution: "UADY",
-			campus: "Facultad de Ingeniería", 
-			logo: "/logos/uady.png", // Asegúrate que esté en static/logos/
-			color: "blue" as const,
-			details: "Enfoque en robótica industrial y sistemas de control."
-		},
-		{
-			category: "Bachillerato General",
-			institution: "Monteverdi",
-			campus: "Campus Norte", 
-			logo: "/logos/monteverdi.png",
-			color: "green" as const,
-			details: "Preparación avanzada en ciencias exactas."
-		}
-	];
-
-	const certificates: Project[] = [
-		{ 
-			id: "cert-1",
-			created_at: new Date().toISOString(),
-			title: "AI Fundamentals", 
-			description: "Certificación oficial de Google sobre IA generativa.",
-			image_url: "data:image/jpeg;base64,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", // Usa links reales o de static/
-			tags: ["AI", "Google"],
-			github_url: "#",
-		}
-	];
 </script>
 
 <main class="pt-32 px-8 max-w-6xl mx-auto pb-20">
@@ -49,20 +21,26 @@
 	</h1>
 
 	<section class="space-y-12">
-		{#each educationData as item, i}
+		{#each data.mainStudies as item, i}
 			<div class="flex flex-col md:flex-row gap-10 md:items-start">
-				<MarcoImagen src={item.logo} alt={item.institution} color={item.color} />
+				<MarcoImagen 
+                    src={item.logo_url} 
+                    alt={item.institution} 
+                    color={item.color as 'blue' | 'green' | 'slate'} 
+					size="large"
+                />
 				
 				<ContentSection 
 					category={item.category} 
 					mainTitle={item.institution}
-					subtitle={item.campus}
+					subtitle={item.subtitle}
 				>
+                    <span class="block text-blue-500 font-mono text-sm mb-2">{item.duration}</span>
 					<p>{item.details}</p>
 				</ContentSection>
 			</div>
 
-			{#if i < educationData.length - 1}
+			{#if i < data.mainStudies.length - 1}
 				<div class="w-full h-px bg-linear-to-r from-transparent via-slate-800/60 to-transparent my-6"></div>
 			{/if}
 		{/each}
@@ -70,14 +48,23 @@
 
 	<div class="w-full h-px bg-slate-800/80 my-24"></div>
 
-	<section>
-		<h2 class="text-2xl font-bold text-slate-500 mb-12 uppercase font-mono tracking-widest">Certifications_</h2>
-		
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-			{#each certificates as cert}
-				<ProjectCard project={cert} onSelect={(p) => (selectedProject = p)} />
-			{/each}
-		</div>
+<section>
+    <h2 class="text-2xl font-bold text-slate-500 mb-12 uppercase font-mono tracking-widest">
+        Certifications_
+    </h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {#each data.certificates as cert}
+            <ProjectCard 
+                project={{
+                    ...cert,
+                    description: cert.details, 
+                    image_url: cert.logo_url   
+                }} 
+                onSelect={(p) => (selectedProject = p)} 
+            />
+        {/each}
+    </div>
 	</section>
 </main>
 

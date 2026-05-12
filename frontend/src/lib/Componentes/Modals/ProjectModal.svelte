@@ -21,7 +21,6 @@
 	<p class="text-slate-400 leading-relaxed mb-8">{project.description}</p>
 
 	<div class="flex flex-col sm:flex-row gap-4">
-    <!-- Solo mostrar el botón de LIVE DEMO si existe la URL de Vercel -->
         {#if project.vercel_link}
 			<a href={project.vercel_link} target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl text-center transition-all shadow-lg shadow-blue-600/20">
 				LIVE DEMO

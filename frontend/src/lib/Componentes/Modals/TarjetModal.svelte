@@ -15,6 +15,6 @@
     />
     <div class="absolute inset-0 bg-linear-to-t from-slate-950 p-5 flex flex-col justify-end">
         <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">{project.title}</h3>
-        <p class="text-[10px] font-mono text-blue-500 opacity-0 group-hover:opacity-100 transition-all">VIEW_PROJECT_</p>
+        <p class="text-[10px] font-mono text-blue-500 opacity-0 group-hover:opacity-100 transition-all">Ver más</p>
     </div>
 </button>
