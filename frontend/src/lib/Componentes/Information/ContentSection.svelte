@@ -10,9 +10,11 @@
     {/if}
 	
     <div class="space-y-1">
-        <h2 class="text-3xl font-black text-white italic uppercase tracking-tight">
+        {#if mainTitle}
+            <h2 class="text-3xl font-black text-white italic uppercase tracking-tight">
             {mainTitle}
-        </h2>
+            </h2>
+        {/if}
         
         {#if subtitle}
             <p class="text-lg font-medium text-slate-300/80 italic">
