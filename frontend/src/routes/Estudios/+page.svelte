@@ -1,9 +1,9 @@
 <script lang="ts">
-	import MarcoImagen from '$lib/Componentes/Information/MarcoImagen.svelte';
+	import MarcoImagen from '$lib/Componentes/Information/FrameImage.svelte';
 	import ContentSection from '$lib/Componentes/Information/ContentSection.svelte';
-	import ProjectCard from '$lib/Componentes/Modals/TarjetasModal.svelte';
+	import ProjectCard from '$lib/Componentes/Modals/TarjetModal.svelte';
 	import BaseModal from '$lib/Componentes/Modals/BaseModal.svelte';
-	import ProjectContent from '$lib/Componentes/Modals/ProyectosModal.svelte';
+	import ProjectContent from '$lib/Componentes/Modals/ProjectModal.svelte';
 	import type { Project } from '$lib/types';
 
 	// Estado para el Modal (El "cerebro" que abre la ventana)

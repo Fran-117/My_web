@@ -1,7 +1,7 @@
 <script lang="ts">
     import BaseModal from '$lib/Componentes/Modals/BaseModal.svelte';
-    import ProjectContent from '$lib/Componentes/Modals/ProyectosModal.svelte';
-    import ProjectCard from '$lib/Componentes/Modals/TarjetasModal.svelte';
+    import ProjectContent from '$lib/Componentes/Modals/ProjectModal.svelte';
+    import ProjectCard from '$lib/Componentes/Modals/TarjetModal.svelte';
     import type { Project } from '$lib/types';
 
     let { data } = $props();
