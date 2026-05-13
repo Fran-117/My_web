@@ -4,9 +4,18 @@
 		alt: string;
 		color?: string; 
 		size?: 'small' | 'standard' | 'large';
+        showGlow?: boolean; // ¿Queremos brillo?
+        variant?: 'glass' | 'solid'; // ¿Fondo transparente o blanco?
 	}
 
-	let { src, alt, color = "blue", size = "standard" }: Props = $props();
+	let { 
+        src,
+        alt,
+        color = "blue",
+        size = "standard",
+        showGlow = true,
+        variant = 'solid'
+        }: Props = $props();
     
     const colorPresets: Record<string, string> = {
         blue: "#3b82f6", // blue-500
